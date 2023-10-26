@@ -39,9 +39,9 @@ class CharacterAdapter (private val context: Context): RecyclerView.Adapter<Char
     override fun onBindViewHolder(holder: CharacterAdapter.ViewHolder, position: Int) {
         val item = dataList[position]
 
-        holder.binding.textViewTitle.text = context.getString(R.string.name_xx, item.name)
-        holder.binding.textViewDetails.text = context.getString(R.string.actor_xx, item.actorName)
-        holder.binding.textViewActorName.text = context.getString(R.string.house_xx, item.houseName)
+        holder.binding.textViewName.text = context.getString(R.string.name, item.name)
+        holder.binding.textViewDetails.text = context.getString(R.string.actor, item.actorName)
+        holder.binding.textViewActorName.text = context.getString(R.string.actor, item.houseName)
 
         Glide.with(context)
             .load(item.imageThumbnail)

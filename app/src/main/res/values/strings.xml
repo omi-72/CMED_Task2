@@ -1,6 +1,23 @@
 <resources>
     <string name="app_name">CMED_Task2</string>
-    <string name="name_xx">"Name: %1$s"</string>
-    <string name="actor_xx">"Actor Name: %1$s"</string>
-    <string name="house_xx">"House Name: %1$s"</string>
+    <string name="name">"Name"</string>
+    <string name="actor">"Actor Name"</string>
+    <string name="house">"House Name"</string>
+
+    <string name="id">ID</string>
+    <string name="alternate_names">Alternate Names</string>
+    <string name="species">Species</string>
+    <string name="gender">Gender</string>
+    <string name="dateOfBirth">DateOfBirth</string>
+    <string name="yearOfBirth">YearOfBirth</string>
+    <string name="wizard">Wizard</string>
+    <string name="ancestry">Ancestry</string>
+    <string name="eyeColour">"EyeColour: %1$s"</string>
+    <string name="hairColour">"HairColour: %1$s"</string>
+    <string name="wand">"Wand: %1$d$"</string>
+    <string name="patronus">"Patronus: %1$d$"</string>
+    <string name="hogwartsStudent">"HogwartsStudent"</string>
+    <string name="hogwartsStaff">"hogwartsStaff"</string>
+    <string name="alive">"alive"</string>
+    <string name="category_xx">"Category: %1$s"</string>
 </resources>
