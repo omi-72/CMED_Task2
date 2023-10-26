@@ -35,7 +35,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun prepareViews() {
-        TODO("Not yet implemented")
+        characterAdapter = CharacterAdapter(this)
+        binding.recyclerView.adapter = characterAdapter
+        viewModel.followingTagDataList.observe(this) {
+            characterAdapter.updateData(it)
+        }
     }
 
     private fun showProgressDialog() {
