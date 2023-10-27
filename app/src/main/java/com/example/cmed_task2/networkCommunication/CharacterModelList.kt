@@ -80,10 +80,6 @@ class CharacterModelList(
                                 item.yearOfBirth = productJsonObject.get("yearOfBirth").asDouble
                             }
 
-                            if (productJsonObject.has("isWizard") && !productJsonObject.isNull("isWizard")) {
-                                val wizard = productJsonObject.getBoolean("isWizard")
-                                generalAlerts.first{it.type == gTAAlertTypeEnum }.isWizard  = productJsonObject.getBoolean("isWizard")
-                            }
 
                             if(productJsonObject.get("ancestry")!= null){
                                 item.ancestry = productJsonObject.get("ancestry").asString
@@ -110,49 +106,21 @@ class CharacterModelList(
                                 item.patronus = productJsonObject.get("patronus").asString
                             }
 
-                            if (productJsonObject.has("hogwartsStudent") && !productJsonObject.isNull("isWizard")) {
-                                val wizard = productJsonObject.getBoolean("isWizard")
-                                generalAlerts.first{it.type == gTAAlertTypeEnum }.isWizard  = productJsonObject.getBoolean("isWizard")
-                            }
 
-                            if (productJsonObject.has("hogwartsStaff") && !productJsonObject.isNull("isWizard")) {
-                                val wizard = productJsonObject.getBoolean("isWizard")
-                                generalAlerts.first{it.type == gTAAlertTypeEnum }.isWizard  = productJsonObject.getBoolean("isWizard")
-                            }
 
                             if(productJsonObject.get("actor")!= null){
                                 item.actorName = productJsonObject.get("actor").asString
                             }
-
-                            if (productJsonObject.has("hogwartsStaff") && !productJsonObject.isNull("isWizard")) {
-                                val wizard = productJsonObject.getBoolean("isWizard")
-                                generalAlerts.first{it.type == gTAAlertTypeEnum }.isWizard  = productJsonObject.getBoolean("isWizard")
-                            }
-
 
 
                             if (productJsonObject.get("image")!= null){
                                 item.imageThumbnail = productJsonObject.get("image").asString
                             }
 
-
-
-//                            if (productJsonObject.get("ingredients")!=null){
-//                                val ingredientsJsonArray = productJsonObject.get("ingredients").asJsonArray
-//                                for (i in 0 until ingredientsJsonArray.size()){
-//
-//                                    if (ingredientsJsonArray.get(i) != null) {
-//                                        val ingredient = ingredientsJsonArray.get(i).asString
-//                                        item.ingredients.add(ingredient)
-//                                    }
-//                                }
-//
-//                            }
-//
-//                            Log.d("id->",productJsonObject.get("id").asString)
-//                            Log.d("title->",productJsonObject.get("title").asString)
-//                            Log.d("description->",productJsonObject.get("description").asString)
-////                            Log.d("thumbnail->",productJsonObject.get("thumbnail").asString)
+                            Log.d("id->",productJsonObject.get("id").asString)
+                            Log.d("name->",productJsonObject.get("name").asString)
+                            Log.d("houseName->",productJsonObject.get("houseName").asString)
+                            Log.d("thumbnail->",productJsonObject.get("thumbnail").asString)
 
                             //val item = CustomModel(productJsonObject.get("title").asString,productsJsonArray.get(index).asJsonObject.get("description").asString )
                             itemList.add(item)
