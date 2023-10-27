@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".NextActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNextDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_next_details"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

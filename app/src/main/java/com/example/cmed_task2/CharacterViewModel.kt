@@ -7,8 +7,6 @@ import com.example.cmed_task2.networkCommunication.CharacterModelList
 class CharacterViewModel : ViewModel() {
     val followingTagDataList: MutableLiveData<MutableList<CharacterModelList>> = MutableLiveData(mutableListOf())
     var isDialogueShowing = MutableLiveData<Boolean>(false)
-
-
     fun loadFollowingData() {
         isDialogueShowing.postValue(true)
 

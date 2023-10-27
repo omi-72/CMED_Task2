@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         prepareViews()
+
         progressDialog = ProgressDialog(this).progressDialog()
         viewModel.loadFollowingData()
 
