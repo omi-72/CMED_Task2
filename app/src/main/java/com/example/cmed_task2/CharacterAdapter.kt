@@ -1,15 +1,13 @@
 package com.example.cmed_task2
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.cmed_task2.databinding.ItemCharacterListBinding
 import com.example.cmed_task2.networkCommunication.CharacterModelList
 
-class CharacterAdapter (private val context: Context, private var characterAdapterInterface: CharacterAdapterInterface): RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter(private var characterAdapterInterface: CharacterAdapterInterface): RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     private var dataList: MutableList<CharacterModelList> = mutableListOf()
 
 
@@ -53,13 +51,14 @@ class CharacterAdapter (private val context: Context, private var characterAdapt
 
         holder.binding.textViewId.text = position.toString()
 
-        Glide.with(context)
-            .load(item.imageThumbnail)
-            .into(holder.binding.imageViewThumbnail)
+//        Glide.with(context)
+//            .load(item.imageThumbnail)
+//            .into(holder.binding.imageViewThumbnail)
 
         holder.binding.root.setOnClickListener {
             characterAdapterInterface.onItemClick(item)
         }
+
 
     }
 
