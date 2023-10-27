@@ -1,4 +1,4 @@
-package com.example.cmed_task2
+package com.example.cmed_task2.detailsList
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -13,14 +13,14 @@ class NextDetailsAdapter(private val context: Context) : RecyclerView.Adapter<Ne
     private var dataList: MutableList<CharacterModelList> = mutableListOf()
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemNextDetailsBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: NextDetailsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataList[position]
         holder.binding.textViewName.text = item.name
         holder.binding.textViewHouse.text = item.houseName

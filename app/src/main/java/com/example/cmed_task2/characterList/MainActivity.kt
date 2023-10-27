@@ -1,4 +1,4 @@
-package com.example.cmed_task2
+package com.example.cmed_task2.characterList
 
 import android.app.Dialog
 import android.content.Context
@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.cmed_task2.ProgressDialog
 import com.example.cmed_task2.databinding.ActivityMainBinding
+import com.example.cmed_task2.detailsList.NextActivity
 import com.example.cmed_task2.networkCommunication.CharacterModelList
 import com.google.gson.Gson
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun prepareViews() {
-        characterAdapter = CharacterAdapter(object : CharacterAdapterInterface{
+        characterAdapter = CharacterAdapter(object : CharacterAdapterInterface {
             override fun onItemClick(item: CharacterModelList){
                 Log.d(this@MainActivity::class.java.simpleName, "item.character.toString()::"+item.name)
                 Log.d(this@MainActivity::class.java.simpleName, "item.character.toString()::"+item.actorName)

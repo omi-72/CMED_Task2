@@ -1,4 +1,4 @@
-package com.example.cmed_task2
+package com.example.cmed_task2.detailsList
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

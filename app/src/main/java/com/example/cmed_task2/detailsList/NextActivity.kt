@@ -1,4 +1,4 @@
-package com.example.cmed_task2
+package com.example.cmed_task2.detailsList
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity

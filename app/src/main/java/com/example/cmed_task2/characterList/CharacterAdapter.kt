@@ -1,4 +1,4 @@
-package com.example.cmed_task2
+package com.example.cmed_task2.characterList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ class CharacterAdapter(private var characterAdapterInterface: CharacterAdapterIn
     private var dataList: MutableList<CharacterModelList> = mutableListOf()
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val binding = ItemCharacterListBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -34,7 +34,7 @@ class CharacterAdapter(private var characterAdapterInterface: CharacterAdapterIn
         diffResult.dispatchUpdatesTo(this)
     }
 
-    override fun onBindViewHolder(holder: CharacterAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataList[position]
 
         holder.binding.textViewName.text = item.name
