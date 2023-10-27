@@ -10,8 +10,8 @@ class CharacterModelList(
     var species: String = "",
     var gender: String = "",
     var houseName: String = "",
-    var dateOfBirth :Double = 0.0,
-    var yearOfBirth : Double = 0.0,
+    var dateOfBirth :String = "",
+    var yearOfBirth : String = "",
     var isWizard: Boolean = false,
     var ancestry: String = "",
     var eyeColour: String = "",
@@ -73,11 +73,11 @@ class CharacterModelList(
 
 
                             if(productJsonObject.has("dateOfBirth")){
-                                item.dateOfBirth = productJsonObject.get("dateOfBirth").asDouble
+                                item.dateOfBirth = productJsonObject.get("dateOfBirth").asString
                             }
 
                             if(productJsonObject.has("yearOfBirth")){
-                                item.yearOfBirth = productJsonObject.get("yearOfBirth").asDouble
+                                item.yearOfBirth = productJsonObject.get("yearOfBirth").asString
                             }
 
 

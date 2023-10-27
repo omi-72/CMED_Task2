@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.cmed_task2.databinding.ItemCharacterListBinding
 import com.example.cmed_task2.networkCommunication.CharacterModelList
 
-class CharacterAdapter (private val context: Context): RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter (private val context: Context, private var characterAdapterInterface: CharacterAdapterInterface): RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     private var dataList: MutableList<CharacterModelList> = mutableListOf()
 
 
@@ -39,13 +39,27 @@ class CharacterAdapter (private val context: Context): RecyclerView.Adapter<Char
     override fun onBindViewHolder(holder: CharacterAdapter.ViewHolder, position: Int) {
         val item = dataList[position]
 
-        holder.binding.textViewName.text = context.getString(R.string.name, item.name)
-        holder.binding.textViewDetails.text = context.getString(R.string.actor, item.actorName)
-        holder.binding.textViewActorName.text = context.getString(R.string.actor, item.houseName)
+        holder.binding.textViewName.text = item.name
+        holder.binding.textViewSpecies.text = item.species
+        holder.binding.textViewGender.text = item.gender
+        holder.binding.textViewHouse.text = item.houseName
+        holder.binding.textViewDateOfBirth.text = item.dateOfBirth
+        holder.binding.textViewYearOfBirth.text = item.yearOfBirth
+        holder.binding.textViewAncestry.text = item.ancestry
+        holder.binding.textViewEyeColour.text = item.eyeColour
+        holder.binding.textViewHairColour.text = item.hairColour
+        holder.binding.textViewPatronus.text = item.patronus
+        holder.binding.textViewActor.text = item.actorName
+
+        holder.binding.textViewId.text = position.toString()
 
         Glide.with(context)
             .load(item.imageThumbnail)
             .into(holder.binding.imageViewThumbnail)
+
+        holder.binding.root.setOnClickListener {
+            characterAdapterInterface.onItemClick(item)
+        }
 
     }
 
@@ -68,4 +82,8 @@ class CharacterAdapter (private val context: Context): RecyclerView.Adapter<Char
             return oldList[oldPosition] == newList[newPosition]
         }
     }
+}
+
+interface CharacterAdapterInterface {
+    fun  onItemClick(item : CharacterModelList)
 }
